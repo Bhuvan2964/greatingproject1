@@ -3,94 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendly Greeting</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f8ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 15px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            background: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #45a049;
-        }
-
-        .greeting {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #0066cc;
-        }
-    </style>
+    <title>Greeting App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>Hello Friend 👋</h1>
-
-        <input type="text" id="nameInput" placeholder="Enter your name">
-
-        <button onclick="showGreeting()">Get Greeting</button>
-
-        <div class="greeting" id="greetingMsg"></div>
+        <h1>Greeting Generator</h1>
+        
+        <div class="input-section">
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <button id="greetBtn">Say Hello!</button>
+        </div>
+        
+        <div id="greeting" class="greeting"></div>
+        
+        <div class="time-section">
+            <p id="timeDisplay"></p>
+        </div>
     </div>
-
-    <script>
-        function showGreeting() {
-            var name = document.getElementById("nameInput").value;
-            var message = "";
-            var hour = new Date().getHours();
-
-            if (name === "") {
-                message = "Please enter your name ❗";
-            } else {
-                if (hour < 12) {
-                    message = "Good Morning " + name + " ☀️";
-                } else if (hour < 18) {
-                    message = "Good Afternoon " + name + " 😊";
-                } else {
-                    message = "Good Evening " + name + " 🌙";
-                }
-            }
-
-            document.getElementById("greetingMsg").innerHTML = message;
-            document.getElementById("nameInput").value = "";
-        }
-    </script>
-
+    
+    <script src="script.js"></script>
 </body>
 </html>
